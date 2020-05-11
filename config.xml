@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.professorbrian.colors" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="https://phonegap.com/ns/1.0">
+	<name>Color Guessing App</name>
+	<description>
+		Color guessing game
+	</description>
+
+	<author email="mebrian@aol.com" href="https://www.professorbrian.com">
+	</author>
+
+
+</widget>

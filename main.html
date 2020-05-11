@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.professorbrian.colors" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="https://phonegap.com/ns/1.0">
+	<name>Color Guessing App</name>
+	<description>
+		Color guessing game
+	</description>
+
+	<author email="mebrian@aol.com" href="https://www.professorbrian.com">
+	</author>
+
+
+</widget>
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Color Guessing Game Prototype </title> 
+
+<script>
+var colors = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "purple", "red", "yellow"]; 
+var guess_input;
+var guesses = 0;
+var finished = false;
+
+
+function check_guess() {
+   if (colors.indexOf(guess_input) == -1) {
+     alert("Sorry, I don't recognize that color!\n\n" + "Please try again.");
+     return false;
+   }
+   if (guess_input > target) {
+     alert("Your color is alphabetically higher than mine!");
+     return false;
+   }
+   if (guess_input < target) {
+     alert("Your color is alphabetically lower than mine!");
+     return false;
+   } else {
+     myBody = document.getElementsByTagName("body")[0];
+     myBody.style.background = target;
+     alert("Congratulations! The color was " + target + "\n\n You got it in " + guesses + " guesses.");
+     return true;
+   }
+ }
+ 
+ function do_game() {
+   var target_index = Math.random() * colors.length;
+   var choice = Math.floor(target_index);
+   target = colors[choice];
+
+   while(!finished) {
+     guess_input = prompt("I am thinking of one of these colors:\n\n" + "blue, cyan, gold, gray, green, magenta, orange, purple, red,yellow\n\n" + "What color am I thinking of?");
+     guesses += 1;
+     finished = check_guess();
+   }
+ }
+ </script>
+
+</head> 
+<body onload="do_game()">
+ 
+</body>
+</html>
